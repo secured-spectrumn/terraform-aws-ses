@@ -83,9 +83,6 @@ resource "aws_iam_user_group_membership" "ses_user" {
 module "ses_user" {
   source          = "git::https://github.com/secured-spectrumn/terraform-aws-iam-system-user?ref=9b2e1345091b9466023e40572578cb8c48a2bf6b"
   enabled         = local.create_user_enabled
-
-  iam_access_key_max_age = var.iam_access_key_max_age
-
   context = module.this.context
 }
 
